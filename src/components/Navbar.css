@@ -1,0 +1,311 @@
+/* =========================================
+   DIGIGOLD — HYBRID PREMIUM NAVBAR
+========================================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #171916;
+  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+}
+
+.nav__inner {
+  width: min(100% - 48px, 1320px);
+  min-height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #f5f1e8;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.nav__logo:hover {
+  opacity: 0.85;
+}
+
+.nav__logo span {
+  color: #d5b779;
+}
+
+.nav__logo-icon {
+  margin-right: 9px;
+  color: #d5b779;
+  font-size: 23px;
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-right: auto;
+}
+
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #b7b4aa;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nav__link:hover {
+  color: #f2d69a;
+  background: rgba(201, 164, 92, 0.08);
+}
+
+.nav__link.is-active {
+  color: #e3c581;
+  background: rgba(201, 164, 92, 0.13);
+  font-weight: 600;
+}
+
+/* =========================================
+   RIGHT SIDE ACTIONS
+========================================= */
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+/* Gold rate */
+
+.nav__rate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  color: #e5ca8d;
+  background: rgba(201, 164, 92, 0.1);
+  border: 1px solid rgba(201, 164, 92, 0.25);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav__dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: #8cbb8b;
+  border-radius: 50%;
+}
+
+/* Login button */
+
+.nav__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 42px;
+  padding: 10px 21px;
+  color: #171916;
+  background: linear-gradient(110deg, #bd9650, #e5ca8d, #c39a50);
+  border: 1px solid #c9a45c;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(201, 164, 92, 0.2);
+}
+
+/* =========================================
+   HAMBURGER
+========================================= */
+
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid rgba(201, 164, 92, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav__burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #e5ca8d;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav__burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav__burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   TABLET & MOBILE
+========================================= */
+
+@media (max-width: 820px) {
+  .nav__inner {
+    min-height: 70px;
+    width: calc(100% - 36px);
+    gap: 15px;
+  }
+
+  .nav__burger {
+    display: flex;
+    order: 3;
+    flex-shrink: 0;
+  }
+
+  .nav__right {
+    margin-left: auto;
+  }
+
+  .nav__rate {
+    display: none;
+  }
+
+  .nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    margin: 0;
+    padding: 15px 20px 20px;
+    background: #171916;
+    border-top: 1px solid rgba(201, 164, 92, 0.12);
+    border-bottom: 1px solid rgba(201, 164, 92, 0.25);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav__links.is-open {
+    display: flex;
+    animation: navSlideDown 0.25s ease;
+  }
+
+  .nav__link {
+    width: 100%;
+    padding: 13px 15px;
+  }
+
+  .nav__link.is-active {
+    border-left: 3px solid #c9a45c;
+    border-radius: 4px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .nav__inner {
+    width: calc(100% - 28px);
+    min-height: 65px;
+    gap: 10px;
+  }
+
+  .nav__logo {
+    font-size: 21px;
+  }
+
+  .nav__logo-icon {
+    margin-right: 6px;
+    font-size: 19px;
+  }
+
+  .nav__btn {
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .nav__burger {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav__logo {
+    font-size: 19px;
+  }
+
+  .nav__right {
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav *,
+  .nav *::before,
+  .nav *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
